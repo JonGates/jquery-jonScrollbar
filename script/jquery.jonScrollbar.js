@@ -36,8 +36,6 @@ plugin home: https://github.com/JonGates/jonScrollbar
 					$(this).removeClass('jonScrollBox_thumbHov')
 				});
 
-				var $this		= $(this);
-
 				this.mousePosition	= 0;
 				this.isHorizontal	= options.axis === 'x';
 				this.hasTouchEvents	= ("ontouchstart" in document.documentElement);
@@ -46,35 +44,36 @@ plugin home: https://github.com/JonGates/jonScrollbar
 				this.posiLabel = this.isHorizontal ? "left" : "top";
 
 				/* 全局数据 */
-					$this.data({
-						"options_axis":options.axis,
-						"options_wheel":options.wheel,
-						"options_wheelSpeed":options.wheelSpeed,
-						"options_wheelLock":options.wheelLock,
-						"options_scrollInvert":options.scrollInvert,
-						"options_trackSize":options.trackSize,
-						"options_thumbSize":options.thumbSize,
+				$this.data({
+					"options_axis":options.axis,
+					"options_wheel":options.wheel,
+					"options_wheelSpeed":options.wheelSpeed,
+					"options_wheelLock":options.wheelLock,
+					"options_scrollInvert":options.scrollInvert,
+					"options_trackSize":options.trackSize,
+					"options_thumbSize":options.thumbSize,
 
-						"mousePosition":this.mousePosition,
-						"isHorizontal":this.isHorizontal,
-						"hasTouchEvents":this.hasTouchEvents,
-						"wheelEvent":this.wheelEvent,
-						"sizeLabel":this.sizeLabel,
-						"posiLabel":this.posiLabel,
+					"mousePosition":this.mousePosition,
+					"isHorizontal":this.isHorizontal,
+					"hasTouchEvents":this.hasTouchEvents,
+					"wheelEvent":this.wheelEvent,
+					"sizeLabel":this.sizeLabel,
+					"posiLabel":this.posiLabel,
 
-						"contentPosition":0,
-						"viewportSize":0,
-						"contentSize":0,
-						"contentRatio":0,
-						"trackSize":0,
-						"trackRatio":0,
-						"thumbSize":0,
-						"trackRatio":0
-					});
+					"contentPosition":0,
+					"viewportSize":0,
+					"contentSize":0,
+					"contentRatio":0,
+					"trackSize":0,
+					"trackRatio":0,
+					"thumbSize":0,
+					"trackRatio":0
+				});
 
 				$this.jonScrollbar("update");
 			});
 		},
+		/* 这个里面的是要私有化的，暴露很危险 */
 		update:function(scrollTo){
 			var $this		= $(this);
 			var $viewport	= $this.find(".jonScrollBox_container"),
@@ -163,7 +162,6 @@ plugin home: https://github.com/JonGates/jonScrollbar
 					$thumb.unbind("mouseup", end);
 					document.ontouchmove = document.ontouchend = null;
 				}
-		
 		},
 		setSize:function(){
 			var $this		= $(this),
@@ -187,7 +185,7 @@ plugin home: https://github.com/JonGates/jonScrollbar
 			$scrollbar.css($this.data("sizeLabel"), $this.data("trackSize"));
 			$track.css($this.data("sizeLabel"), $this.data("trackSize"));
 			$thumb.css($this.data("sizeLabel"), $this.data("thumbSize"));	
-		},	
+		},
 		scrollTo:function(scrollTo){
 			var $this		= $(this);
 			switch (scrollTo){
