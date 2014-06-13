@@ -1,0 +1,25 @@
+<html lang="zh">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+	<script language="javascript" type="text/javascript" src="../script/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../script/jquery.jonscrollbar.js"></script>
+	<link rel="stylesheet" href="../style/jquery.jonscrollbar.css" type="text/css" media="screen"/>
+</head>
+	<body>
+		<div id="cs1"><div><br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/></div></div>
+		<div id="cs2"><br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/></div>
+	</body>
+
+	<script type="text/javascript">
+		(function($){
+			$('#cs1').jonScrollbar({'theme':'light1'});
+			$('#cs2').jonScrollbar({'theme':'light2'});
+			$('#cs3').jonScrollbar({'theme':'light3'});
+
+			$('#cs1').jonScrollbar('scrollTo','0');
+			$('#cs3').jonScrollbar('scrollTo','last');
+			$('#cs1').jonScrollbar('scrollTo','50');
+		})(jQuery);
+	</script>
+
+</html>
