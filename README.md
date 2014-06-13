@@ -21,3 +21,8 @@ Refer to the [demo](#) and the [source code](https://github.com/JonGates/jquery-
 			$('#cs1').jonScrollbar('scrollTo','50');
 		})(jQuery);
 	</script>
+
+### 以后版本介绍：
+　　v.0.0.0.2　将支持X轴滚动和自由模式
+　　v.0.0.0.3　很多同学需要瀑布流方式，为了减少DOM的大小，插件将支持回调
+　　
