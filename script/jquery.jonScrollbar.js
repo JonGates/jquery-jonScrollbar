@@ -108,6 +108,7 @@ plugin home: https://github.com/JonGates/jonScrollbar
 
 				function start(event){
 					$("body").addClass("noSelect");
+					$('div').attr('unselectable', 'on');//ie6
 					$this.data("mousePosition",$this.data("isHorizontal") ? event.pageX : event.pageY);
 					$this.data("thumbPosition",parseInt($thumb.css($this.data("posiLabel")), 10) || 0);
 					if($this.data("hasTouchEvents")){
@@ -157,6 +158,7 @@ plugin home: https://github.com/JonGates/jonScrollbar
 
 				function end(){
 					$("body").removeClass("noSelect");
+					$('div').attr('unselectable', 'off');//ie6
 					$(document).unbind("mousemove", drag);
 					$(document).unbind("mouseup", end);
 					$thumb.unbind("mouseup", end);
