@@ -170,7 +170,7 @@ plugin home: https://github.com/JonGates/jonScrollbar
 				$thumb		= $scrollbar.find(".jonScrollBox_thumb");
 			var sizeLabelCap  = $this.data("sizeLabel").charAt(0).toUpperCase() + $this.data("sizeLabel").slice(1).toLowerCase();
 				//$this.data("viewportSize",$viewport[0]['offset'+ sizeLabelCap]);
-				$this.data("viewportSize",$viewport.outerHeight());
+				$this.data("viewportSize",$viewport.outerHeight() || 1);
 				$this.data("contentSize",$overview[0]['scroll'+ sizeLabelCap]);
 				$this.data("contentRatio",$this.data("viewportSize") / $this.data("contentSize"));
 				//$this.data("trackSize",$this.data("trackSize") || $this.data("viewportSize"));
