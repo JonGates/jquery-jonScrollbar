@@ -6,8 +6,11 @@
 	<link rel="stylesheet" href="../style/jquery.jonscrollbar.css" type="text/css" media="screen"/>
 </head>
 	<body>
-		<div id="cs1"><div><br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/></div></div>
-		<div id="cs2"><br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/></div>
+		<div id="cs1"><div id="html1"><br/>0<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/>1<br/></div></div>
+		<div id="cs2"><div id="html2"><br/>0<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/>2<br/></div></div>
+		<br><div id="add1">加内容到CS1</div>
+		<br><div id="add2">增加CS1滚动条长度</div>
+		<br>#html1 为了演示方便控制长度，实际应用的时候可以自行根据你要求，修改样式即可
 	</body>
 
 	<script type="text/javascript">
@@ -22,4 +25,24 @@
 		})(jQuery);
 	</script>
 
+	<script type="text/javascript">
+		(function($){
+			//加内容到CS1
+			$('#add1').click(function() {
+				_add($('#html1'));
+				$('#cs1').jonScrollbar("setSize");
+			});
+			//增加CS1滚动条长度
+			$('#add2').click(function() {
+				_add($('#html1'));
+				var hight=$('#cs1 .jonScroll-light1').outerHeight()+10;
+				$('#cs1 .jonScroll-light1').attr('style', 'height: '+hight+'px;');
+				$('#cs1').jonScrollbar("setSize");
+			});
+			function _add(obj){
+				var html = obj.html()+obj.html().length+'<br/>';
+				obj.html(html);
+			}
+		})(jQuery);
+	</script>
 </html>
